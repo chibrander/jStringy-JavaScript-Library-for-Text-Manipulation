@@ -5,9 +5,13 @@ Library for commonly used text functions.<br /><br />
 
 Inslude text-me.js file in your project.
 Ex.
-'<script src="text-me.js"></script>'
+
+```
+<script src="text-me.js"></script>
+```
 
 **LEFT Function**
-'left(mytext,3);'
-
+```
+left(mytext,3);
 // Returns Tex
+```
