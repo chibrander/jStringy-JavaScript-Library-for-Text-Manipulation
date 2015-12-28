@@ -1,7 +1,7 @@
 # text-functions-library-javascript
 Library for commonly used text functions.<br /><br />
 
-##Usage:
+##Setup:
 
 Inslude text-me.js file in your project.
 Ex.
@@ -10,8 +10,11 @@ Ex.
 <script src="text-me.js"></script>
 ```
 
-**left Function Syntax
-left([Text as String],[Number of Characters])**
+##Usage:
+
+**left Function Syntax**
+
+**left([Text as String],[Number of Characters])**
 ```
 left(mytext,3);
 // Returns Tex
