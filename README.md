@@ -1,10 +1,11 @@
 # text-functions-library-javascript
-Library for commonly used text functions.
+Library for commonly used text functions.<br /><br />
 
-Usage:
-Inslude text-me.js file in your project.
-Ex. <script src="text-me.js"></script>
+<h2>Usage:</h2>
+<p>Inslude text-me.js file in your project.</p>
+<p>Ex.</p>
+<pre><script src="text-me.js"></script></pre>
 
-LEFT Function
-left(mytext,3);
-// Returns Tex
+<b>LEFT Function</b><br />
+left(mytext,3); <br />
+// Returns Tex <br />
