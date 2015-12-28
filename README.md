@@ -10,7 +10,8 @@ Ex.
 <script src="text-me.js"></script>
 ```
 
-**LEFT Function**
+**left Function Syntax
+left([Text as String],[Number of Characters])**
 ```
 left(mytext,3);
 // Returns Tex
