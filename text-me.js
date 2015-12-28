@@ -32,7 +32,7 @@ function wordcount(txt) {
 function containsword(wordtofind, wheretofind) {
     var nwheretofind = (" " + wheretofind + " ").toLowerCase();
     var nwordtofind = (" " + wordtofind + " ").toLowerCase();
-        nwheretofind = nwheretofind.replace(/,|\.|\;|\?|\!|\(|\)/g,'');
+        nwheretofind = nwheretofind.replace(/,|\.|\:|\;|\?|\!|\(|\)/g," ");
     if (nwheretofind.indexOf(nwordtofind) >= 0) {
         return true;
     } else {
