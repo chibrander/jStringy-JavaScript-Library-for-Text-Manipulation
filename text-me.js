@@ -95,6 +95,74 @@ function todouble(txt, decimal) {
 }
 
 
+/*
+Based on Andrei Mackenzie's Code
+*/
+// Levenshtein Distance
+function levenshteindistance(a, b) {
+    if (a.length == 0) return b.length;
+    if (b.length == 0) return a.length;
+
+    var matrix = [];
+
+    // increment along the first column of each row
+    var i;
+    for (i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+
+    // increment each column in the first row
+    var j;
+    for (j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    // Fill in the rest of the matrix
+    for (i = 1; i <= b.length; i++) {
+        for (j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) == a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, // substitution
+                    Math.min(matrix[i][j - 1] + 1, // insertion
+                        matrix[i - 1][j] + 1)); // deletion
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
+}
+
+
+function bestMatch(txt, lookup_array, results_type) {
+    var arrmatch = [lookup_array[0]];
+    var arrindex = ["N/A"];
+    var matchnum = levenshteindistance(txt, lookup_array[0]);
+    results_type = results_type == undefined ? 0 : results_type;
+
+    for (var i = 0; i < lookup_array.length; i++) {
+        if (levenshteindistance(txt, lookup_array[i]) < matchnum) {
+            matchnum = levenshteindistance(txt, lookup_array[i]);
+            arrmatch = [];
+            arrindex = [];
+            arrmatch[0] = lookup_array[i];
+            arrindex[0] = i;
+        } else if (levenshteindistance(txt, lookup_array[i]) == matchnum) {
+            arrmatch[arrmatch.length] = lookup_array[i];
+            arrindex[arrindex.length] = i;
+        }
+    }
+    if (results_type == 0) {
+        return arrmatch;
+    } else {
+        return arrindex;
+    }
+}
+
+
+
+
+
 
 
 Number.prototype.formatNumber = function (c, d, t) {
@@ -122,6 +190,52 @@ String.prototype.reverse = function () {
     return s;
 }
 
+/*
+Copyright (c) 2011 Andrei Mackenzie
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+// Compute the edit distance between the two given strings
+exports.getEditDistance = function (a, b) {
+    if (a.length == 0) return b.length;
+    if (b.length == 0) return a.length;
+
+    var matrix = [];
+
+    // increment along the first column of each row
+    var i;
+    for (i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+
+    // increment each column in the first row
+    var j;
+    for (j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    // Fill in the rest of the matrix
+    for (i = 1; i <= b.length; i++) {
+        for (j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) == a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, // substitution
+                    Math.min(matrix[i][j - 1] + 1, // insertion
+                        matrix[i - 1][j] + 1)); // deletion
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
+}
+
+
+
+
+
 var word = "foo 𝌆 b|ar;sdf,sd sdf:ssfs?dgdfgd ,dgdfgd.ddfgfdg";
 // var me = reverse(word, 6, 4);
 var me = wordcount(word);
@@ -137,3 +251,21 @@ console.log(formatPercent(number2));
 console.log(repeat("Marinio", 4));
 console.log(todouble("$1,400.78"));
 console.log(containsword("Word", "wordberin gfgf"));
+
+
+console.log(levenshteindistance("My New Car", "My car new"));
+console.log(levenshteindistance("My New Car", "My Toyota car"));
+console.log(levenshteindistance("My New Car", "My Nw Car"));
+console.log(levenshteindistance("My New Car", "Bar Car"));
+console.log(levenshteindistance("My New Car", "your Nw car"));
+
+
+var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
+
+console.log(bestMatch("My New Car", myarr).length);
+console.log(bestMatch("My New Car", myarr)[0]);
+console.log(bestMatch("My New Car", myarr)[1]);
+console.log(bestMatch("My New Car", myarr, 0)[0]);
+console.log(bestMatch("My New Car", myarr, 0)[1]);
+console.log(bestMatch("My New Car", myarr, 1)[0]);
+console.log(bestMatch("My New Car", myarr, 1)[1]);
