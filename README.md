@@ -43,6 +43,9 @@ Returns specified number of characters from the right of a text string.
 var mytext = "Text that we would like to use, and then more.";
 right(mytext,4);
 // Returns ore.
+
+// you can also use the following syntax
+mytext.right(4);
 ```
 
 
