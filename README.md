@@ -133,7 +133,7 @@ trimed(mytext);
 
 Converts a number to Dollar currency formatted string.
 
->**formatDollar([number], [number_of_digits_after_delimiter] optional, [delimiter] optional, [thousand_separator] optional)**
+>**formatDollar([number], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
 
 ```javascript
 var mynumber = 19654.13;
