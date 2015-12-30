@@ -127,6 +127,9 @@ Removes extra white spaces in the middle, before and after.
 var mytext = " Text that we,  would like to  use, and   then  more.   ";
 trimed(mytext);
 // Returns Text that we, would like to use, and then more.
+
+// you can also use the following syntax
+mytext.trimed();
 ```
 
 
