@@ -11,8 +11,9 @@ Ex.
 <script src="text-me.js"></script>
 ```
 ---
-##Usage:
 
+##Usage:
+---
 **left Function Syntax**
 
 Returns specified number of characters from the left of a text string.
