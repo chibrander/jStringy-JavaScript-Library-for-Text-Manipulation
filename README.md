@@ -57,5 +57,20 @@ Returns specified number of characters from the starting point defined in the mi
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 mid(mytext,6,4);
-// Returns that.
+// Returns that
+```
+
+
+---
+
+**midd Function Syntax**
+
+Returns characters from from the middle of a text string using start and end character number.
+
+>**midd([Text as String],[Start Character],[End Character])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+mid(mytext,11,12);
+// Returns we
 ```
