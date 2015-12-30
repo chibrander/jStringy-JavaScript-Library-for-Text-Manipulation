@@ -14,7 +14,8 @@ Ex.
 
 **left Function Syntax**
 
- **left([Text as String],[Number of Characters])**
+>**left([Text as String],[Number of Characters])**
+
 ```javascript
 left(mytext,3);
 // Returns Tex
