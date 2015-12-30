@@ -65,7 +65,7 @@ mid(mytext,6,4);
 
 **midd Function Syntax**
 
-Returns characters from from the middle of a text string using start and end character number.
+Returns characters from the middle of a text string using start and end character number.
 
 >**midd([Text as String],[Start Character],[End Character])**
 
