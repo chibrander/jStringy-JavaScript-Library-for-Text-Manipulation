@@ -1,5 +1,5 @@
 # text-functions-library-javascript
-Library for commonly used text functions.<br /><br />
+Open-Source JavaScript Library for commonly used text functions.<br /><br />
 
 ##Setup:
 
