@@ -237,3 +237,38 @@ levenshteinDistance(initialtext, "your Nw car");
 // you can also use the following syntax
 initialtext.levenshteinDistance("My car new");
 ```
+
+
+
+
+---
+
+**bestMatch Function Syntax**
+
+Gets the best match string or index based on Levenshtein Distance.
+This function returns an array, due to possibility of having multiple best matches.
+
+>**bestMatch([Text as String],[Array_of_Strings_to_Check],[results_type] optional)**
+
+```javascript
+var initialtext = "My New Car";
+var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
+
+bestMatch(initialtext, myarr)
+// Returns ["My Nw Car", "My Ne Car"]
+
+// get the first best match
+bestMatch(initialtext, myarr)[0];
+// Returns My Nw Car
+
+// get the next best match
+bestMatch(initialtext, myarr)[1];
+// Returns My Ne Car
+
+
+// you can also use the following syntax
+initialtext.bestMatch(myarr);
+```
+
+
+
