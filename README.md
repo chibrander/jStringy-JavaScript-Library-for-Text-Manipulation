@@ -21,10 +21,10 @@ Returns specified number of characters from the left of a text string.
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 left(mytext,3);
+// Returns Tex
 
 // you can also use the following syntax
 mytext.left(3);
-// Returns Tex
 ```
 
 
