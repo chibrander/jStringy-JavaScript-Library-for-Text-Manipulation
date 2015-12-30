@@ -173,3 +173,26 @@ formatNumber(mynumber,2,",",".")
 // Returns 19.654,13
 
 ```
+
+
+---
+
+**formatCurrency Function Syntax**
+
+Converts a number to a currency string.
+
+>**formatCurrency([number], [currency_string], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
+
+```javascript
+var mynumber = 19654.13;
+
+formatCurrency(mynumber,"£")
+// Returns £19,654.13
+
+formatCurrency(mynumber, "£", 0)
+// Returns £19,654
+
+formatCurrency(mynumber,"£",2,",",".")
+// Returns £19.654,13
+
+```
