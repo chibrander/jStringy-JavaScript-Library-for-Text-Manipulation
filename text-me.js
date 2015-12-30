@@ -139,8 +139,13 @@ function levenshteinDistance(a, b) {
 
     return matrix[b.length][a.length];
 }
+// END levenshteinDistance
 
 
+
+/*
+Gets the best match string or index based on Levenshtein Distance. This function returns an array, due to possibility of having multiple best matches.
+*/
 function bestMatch(txt, lookup_array, results_type) {
     var arrmatch = [lookup_array[0]];
     var arrindex = ["N/A"];
@@ -165,7 +170,7 @@ function bestMatch(txt, lookup_array, results_type) {
         return arrindex;
     }
 }
-
+// END bestMatch
 
 
 
@@ -199,4 +204,8 @@ String.prototype.reversed = function () {
 
 String.prototype.levenshteinDistance = function (stringtocompare) {
     return levenshteinDistance(this,stringtocompare);
+}
+
+String.prototype.bestMatch = function (lookup_array, results_type) {
+    return bestMatch(this,lookup_array, results_type);
 }
