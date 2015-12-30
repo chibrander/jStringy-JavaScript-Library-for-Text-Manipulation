@@ -14,7 +14,7 @@ Ex.
 
 **left Function Syntax**
 
-Returns specified number of characters from teh left of a text string.
+Returns specified number of characters from the left of a text string.
 
 >**left([Text as String],[Number of Characters])**
 
@@ -22,4 +22,18 @@ Returns specified number of characters from teh left of a text string.
 var mytext = "Text that we would like to use, and then more.";
 left(mytext,3);
 // Returns Tex
+```
+
+
+
+**right Function Syntax**
+
+Returns specified number of characters from the right of a text string.
+
+>**right([Text as String],[Number of Characters])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+right(mytext,4);
+// Returns ore.
 ```
