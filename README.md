@@ -136,9 +136,17 @@ Converts a number to Dollar currency formatted string.
 >**formatDollar([number], [number_of_digits_after_delimiter] optional, [delimiter] optional, [thousand_separator] optional)**
 
 ```javascript
-var mytext = " Text that we,  would like to  use, and   then  more.   ";
-trimed(mytext);
-// Returns Text that we, would like to use, and then more.
+var mynumber = 19654.13;
+
+formatDollar(mynumber)
+// Returns $19,654.13
+
+formatDollar(mynumber,0)
+// Returns $19,654
+
+formatDollar(mynumber,2,",",".")
+// Returns $19.654,13
+
 ```
 
 
