@@ -74,3 +74,21 @@ var mytext = "Text that we would like to use, and then more.";
 mid(mytext,11,12);
 // Returns we
 ```
+
+
+---
+
+**reversed Function Syntax**
+
+Flips (reverses) the text string.
+
+>**reversed([Text as String])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+reversed(mytext);
+// Returns .erom neht dna ,esu ot ekil dluow ew taht txeT
+
+// you can also use the following syntax
+mytext.reversed();
+```
