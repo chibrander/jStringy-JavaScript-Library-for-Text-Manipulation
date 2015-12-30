@@ -189,6 +189,9 @@ var mynumber = 19654.13;
 formatCurrency(mynumber,"£")
 // Returns £19,654.13
 
+formatCurrency(mynumber,"USD ")
+// Returns USD 19,654.13
+
 formatCurrency(mynumber, "£", 0)
 // Returns £19,654
 
