@@ -24,7 +24,10 @@ function reversed(s) {
 }
 
 function wordcount(txt) {
-    var newtxt = txt.split(/(?:,| |;|\?|\.)+/);
+    var newtxt = txt.replace(/,|\.|\:|\;|\?|\!|\(|\)/g," ");
+    newtxt = newtxt.replace(/ +/g, " ");
+    newtxt = newtxt.trim();
+    newtxt = newtxt.split(" ");
     return newtxt.length;
 }
 
