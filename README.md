@@ -17,7 +17,7 @@ Ex.
 
 Returns specified number of characters from the left of a text string.
 
->**left([Text as String],[Number of Characters])**
+>left([Text as String],[Number of Characters])
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
