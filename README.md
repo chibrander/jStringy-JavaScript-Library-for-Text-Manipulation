@@ -125,3 +125,20 @@ var mytext = " Text that we,  would like to  use, and   then  more.   ";
 trimed(mytext);
 // Returns Text that we, would like to use, and then more.
 ```
+
+
+---
+
+**formatDollar Function Syntax**
+
+Converts a number to Dollar currency formatted string.
+
+>**formatDollar([number], [number_of_digits_after_delimiter] optional, [delimiter] optional, [thousand_separator] optional)**
+
+```javascript
+var mytext = " Text that we,  would like to  use, and   then  more.   ";
+trimed(mytext);
+// Returns Text that we, would like to use, and then more.
+```
+
+
