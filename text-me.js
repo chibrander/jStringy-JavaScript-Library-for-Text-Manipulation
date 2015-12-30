@@ -202,6 +202,10 @@ String.prototype.reversed = function () {
     return reversed(this);
 }
 
+String.prototype.trimed = function () {
+    return trimed(this);
+}
+
 String.prototype.levenshteinDistance = function (stringtocompare) {
     return levenshteinDistance(this,stringtocompare);
 }
