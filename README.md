@@ -92,3 +92,36 @@ reversed(mytext);
 // you can also use the following syntax
 mytext.reversed();
 ```
+
+
+---
+
+**wordcount Function Syntax**
+
+Gets the wordcount from a string.
+
+>**wordcount([Text as String])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+wordcount(mytext);
+// Returns 10
+
+// you can also use the following syntax
+mytext.reversed();
+```
+
+
+---
+
+**trimed Function Syntax**
+
+Removes extra white spaces in the middle, before and after.
+
+>**trimed([Text as String])**
+
+```javascript
+var mytext = " Text that we,  would like to  use, and   then  more.   ";
+trimed(mytext);
+// Returns Text that we, would like to use, and then more.
+```
