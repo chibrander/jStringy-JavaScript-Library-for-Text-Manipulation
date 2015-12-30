@@ -11,6 +11,8 @@ Ex.
 <script src="text-me.js"></script>
 ```
 ---
+---
+---
 
 ##Usage:
 ---
@@ -41,4 +43,19 @@ Returns specified number of characters from the right of a text string.
 var mytext = "Text that we would like to use, and then more.";
 right(mytext,4);
 // Returns ore.
+```
+
+
+---
+
+**mid Function Syntax**
+
+Returns specified number of characters from the starting point defined in the middle of a text string.
+
+>**mid([Text as String],[Starting Character],[Number of Characters])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+mid(mytext,6,4);
+// Returns that.
 ```
