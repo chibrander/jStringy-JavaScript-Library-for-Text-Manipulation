@@ -202,3 +202,38 @@ formatCurrency(mynumber,"£",2,",",".")
 // Returns £19.654,13
 
 ```
+
+
+
+---
+
+**levenshteinDistance Function Syntax**
+
+Caculates Levenshtein Distance between 2 strings.
+
+>**levenshteinDistance([Text as String],[Text_to_Compare as String])**
+
+```javascript
+var initialtext = "My New Car";
+
+levenshteinDistance(initialtext, "My car new");
+// Returns 6
+
+levenshteinDistance(initialtext, "My Toyota car");
+// Returns 7
+
+levenshteinDistance(initialtext, "My New Car");
+// Returns 0
+
+levenshteinDistance(initialtext, "My Nw Car");
+// Returns 1
+
+levenshteinDistance(initialtext, "Bar Car");
+// Returns 6
+
+levenshteinDistance(initialtext, "your Nw car");
+// Returns 6
+
+// you can also use the following syntax
+initialtext.levenshteinDistance("My car new");
+```
