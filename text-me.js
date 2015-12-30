@@ -31,6 +31,10 @@ function wordcount(txt) {
     return newtxt.length;
 }
 
+function trimed(txt) {
+    return txt.replace(/ +/g, " ").trim();  
+}
+
 
 function containsword(wordtofind, wheretofind) {
     var nwheretofind = (" " + wheretofind + " ").toLowerCase();
