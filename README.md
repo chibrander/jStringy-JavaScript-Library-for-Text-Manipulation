@@ -150,3 +150,26 @@ formatDollar(mynumber,2,",",".")
 ```
 
 
+
+
+---
+
+**formatNumber Function Syntax**
+
+Converts a number to a formatted string with thousand separator.
+
+>**formatNumber([number], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
+
+```javascript
+var mynumber = 19654.13;
+
+formatNumber(mynumber)
+// Returns 19,654.13
+
+formatNumber(mynumber,0)
+// Returns 19,654
+
+formatNumber(mynumber,2,",",".")
+// Returns 19.654,13
+
+```
