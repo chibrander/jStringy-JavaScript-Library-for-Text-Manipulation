@@ -254,21 +254,28 @@ This function returns an array, due to possibility of having multiple best match
 var initialtext = "My New Car";
 var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
 
-bestMatch(initialtext, myarr)
+mymatch = bestMatch(initialtext, myarr);
 // Returns ["My Nw Car", "My Ne Car"]
 
 // get the first best match
 bestMatch(initialtext, myarr)[0];
 // Returns My Nw Car
 
-// get the next best match
-bestMatch(initialtext, myarr)[1];
-// Returns My Ne Car
+////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
+var mymatch = bestMatch(initialtext, myarr);
+
+// get the first best match
+mymatch[0]; // Returns My Nw Car
+
+// get the next best match
+mymatch[1]; // Returns My Ne Car
+
+// you can find out how many best matches are available
+mymatch.length //Returns 2
 
 // you can also use the following syntax
 initialtext.bestMatch(myarr);
 ```
-
-
-
