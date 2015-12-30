@@ -10,7 +10,7 @@ Ex.
 ```html
 <script src="text-me.js"></script>
 ```
-
+---
 ##Usage:
 
 **left Function Syntax**
@@ -28,7 +28,7 @@ left(mytext,3);
 mytext.left(3);
 ```
 
-
+---
 
 **right Function Syntax**
 
