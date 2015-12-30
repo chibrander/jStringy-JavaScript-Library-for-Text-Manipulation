@@ -18,7 +18,7 @@ function mid(txt, startchar, numchar) {
     return c;
 }
 
-function reverse(s) {
+function reversed(s) {
     for (var i = s.length - 1, o = ''; i >= 0; o += s[i--]) {}
     return o;
 }
@@ -181,7 +181,7 @@ String.prototype.left = function (numchar) {
     var c = this.substring(0, numchar);
     return c;
 }
-String.prototype.reverse = function () {
+String.prototype.reversed = function () {
     var s = '',
         L = this.length;
     while (L) {
