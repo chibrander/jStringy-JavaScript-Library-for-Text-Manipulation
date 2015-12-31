@@ -36,12 +36,14 @@ function trimed(txt) {
 }
 
 function getWordByNum(txt,word_number) {
-    var dateArr = txt.split(" ");
+    var text = trimed(txt);
+    var dateArr = text.split(" ");
     return dateArr[word_number-1];
 }
 
 function getLastWordByNum(txt,word_number) {
-    var dateArr = txt.split(" ");
+    var text = trimed(txt);
+    var dateArr = text.split(" ");
     return dateArr[dateArr.length-word_number];
 }
 
