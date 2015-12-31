@@ -298,7 +298,7 @@ This function returns an array, due to possibility of having multiple best match
 
 >**bestMatchObject([lookup_value], [lookup_array])**
 
->Properties:
+>***Properties:***
 
 > .lookup_array
 
