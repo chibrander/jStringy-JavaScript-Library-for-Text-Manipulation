@@ -35,6 +35,10 @@ function trimed(txt) {
     return txt.replace(/ +/g, " ").trim();  
 }
 
+function getLastWord(txt,n) {
+    var dateArr = txt.split(" ");
+    return dateArr[dateArr.length-n];
+}
 
 function containsword(wordtofind, wheretofind) {
     var nwheretofind = (" " + wheretofind + " ").toLowerCase();
