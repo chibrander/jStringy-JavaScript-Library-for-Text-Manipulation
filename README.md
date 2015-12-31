@@ -1,4 +1,4 @@
-# text-functions-library-javascript
+# jStringy - JavaScript Library for Text Manipulation
 Open-Source JavaScript Library for commonly used text functions.<br /><br />
 Many of the functions are similar to Visual Basic text function syntax, which I often found more intuitive to use than native JavaScript functions.
 
