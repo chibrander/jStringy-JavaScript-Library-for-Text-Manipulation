@@ -286,3 +286,64 @@ mymatchArray.length //Returns 2
 // you can also use the following syntax
 initialtext.bestMatch(myarr);
 ```
+
+
+
+---
+
+**bestMatchObject Function Syntax**
+
+Creates an Object taht contains the best match string or index based on Levenshtein Distance.
+This function returns an array, due to possibility of having multiple best matches.
+
+>**bestMatchObject([lookup_value], [lookup_array])**
+>Properties:
+> .lookup_array
+> .lookup_value
+> .array [returns array]
+> .arrayIndex [returns array]
+> .first
+> .firstIndex
+> .last
+> .lastIndex
+> .len
+
+```javascript
+var initialtext = "My New Car";
+var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
+
+var b = new bestMatchObject(initialtext,myarr);
+// Creates an Object and stores in variable b
+
+//get an array of best matches
+b.array
+//Returns ["My Nw Car", "My Ne Car"]
+
+//get an array of best matche indexes
+b.arrayIndex
+//Returns [2, 5]
+
+// get the first best match
+b.first
+//Returns My Nw Car
+
+// get the first best match index
+b.firstIndex
+//Returns 2
+
+// get the last best match
+b.last
+//Returns My Ne Car
+
+// get the last best match index
+b.lastIndex
+//Returns 5
+
+//get how many best matches are available
+b.len
+//Returns 2
+
+b.lookup_array
+//Returns ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"]
+
+```
