@@ -4,7 +4,7 @@ Many of the functions are named similar to Visual Basic text function syntax, wh
 
 Most functions can be used similar to native JavaScript methods.
 Ex.
-'''javascript
+```javascript
 var str = "Hello world!";
 
 // native JavaScript substring
@@ -12,8 +12,7 @@ str.substring(0, 5) //Returns Hello
 
 // jStringy JavaScript left
 str.left(5) //Returns Hello
-
-'''
+```
 
 ##Setup:
 
