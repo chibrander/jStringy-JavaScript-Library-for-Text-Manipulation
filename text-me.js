@@ -35,9 +35,14 @@ function trimed(txt) {
     return txt.replace(/ +/g, " ").trim();  
 }
 
-function getLastWord(txt,n) {
+function getWordByNum(txt,word_number) {
     var dateArr = txt.split(" ");
-    return dateArr[dateArr.length-n];
+    return dateArr[word_number-1];
+}
+
+function getLastWordByNum(txt,word_number) {
+    var dateArr = txt.split(" ");
+    return dateArr[dateArr.length-word_number];
 }
 
 function containsword(wordtofind, wheretofind) {
