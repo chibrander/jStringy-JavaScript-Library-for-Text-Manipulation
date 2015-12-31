@@ -16,7 +16,7 @@ str.left(5) //Returns Hello
 
 ##Setup:
 
-Inslude jstringy.js file in your project.
+Include jstringy.js file in your project.
 Ex.
 
 ```html
