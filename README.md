@@ -254,6 +254,32 @@ mynumber.formatPercent(2,",",".");
 
 
 
+---
+
+**toDouble Function Syntax**
+
+Converts a currency string or other number formatted string to double.
+
+>**toDouble([text_number, [decimal_separator] optional)**
+
+```javascript
+var mytext = "$15,159.79 USD";
+
+toDouble(mytext)
+// Returns 15159.79
+
+toDouble(mytext,",")
+// Returns 15.15979
+
+
+// you can also use the following syntax
+mytext.toDouble();
+mytext.toDouble(",");
+```
+
+
+
+
 
 ---
 
