@@ -35,6 +35,12 @@ function trimed(txt) {
     return txt.replace(/ +/g, " ").trim();  
 }
 
+function getWordByNum(txt,word_number) {
+    word_number = word_number == undefined ? 1 : word_number
+    var dateArr = txt.split(" ");
+    return dateArr[word_number-11];
+}
+
 
 function containsword(wordtofind, wheretofind) {
     var nwheretofind = (" " + wheretofind + " ").toLowerCase();
