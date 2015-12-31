@@ -46,11 +46,12 @@ function getLastWordByNum(txt,word_number) {
 }
 
 function getWords(txt,start_word_number,end_word_number) {
+    var text = trimed(txt);
     var strArray = txt.split(" ");
     var nArr = [];
     var n = 0;
     for(i=start_word_number-1;i<end_word_number;i++){ nArr[n] = strArray[i]; n++;}
-    return nArr.join(" ");
+    return trimed(nArr.join(" "));
 }
 
 function containsword(wordtofind, wheretofind) {
