@@ -161,6 +161,26 @@ mytext.getLastWordByNum(2)
 
 ---
 
+**getWords Function Syntax**
+
+Gets a part of initial string by first and last word position.
+
+>**getWords([text],[start_word_number],[end_word_number])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+
+getWords(mytext,2,5)
+// Returns that we would like
+
+// you can also use the following syntax
+mytext.getWords(2,5)
+```
+
+
+
+---
+
 **trimed Function Syntax**
 
 Removes extra white spaces in the middle, before and after.
