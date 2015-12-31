@@ -14,6 +14,17 @@ str.substring(0, 5) //Returns Hello
 str.left(5) //Returns Hello
 ```
 
+You can slo use them as regular functions.
+Ex.
+```javascript
+var str = "Hello world!";
+
+// jStringy left function
+left(str,5) //Returns Hello
+```
+
+
+
 ##Setup:
 
 Include jstringy.js file in your project.
