@@ -193,6 +193,22 @@ function bestMatch(txt, lookup_array, results_type) {
 // END bestMatch
 
 
+// convert to Object
+
+function bestMatchObject(lookup_value, lookup_array) {
+
+    this.lookup_array = lookup_array;
+    this.lookup_value = lookup_value;
+    this.array = bestMatch(this.lookup_value,this.lookup_array);
+    this.arrayIndex = bestMatch(this.lookup_value,this.lookup_array,1);
+    this.first = this.array[0];
+    this.firstIndex = this.arrayIndex[0];
+    this.last = this.array[this.len-1];
+    this.lastIndex = this.arrayIndex[this.len-1];    
+    this.len = this.array.length;
+
+}
+// END bestMatchObject
 
 
 
