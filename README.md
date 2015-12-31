@@ -297,15 +297,25 @@ Creates an Object taht contains the best match string or index based on Levensht
 This function returns an array, due to possibility of having multiple best matches.
 
 >**bestMatchObject([lookup_value], [lookup_array])**
+
 >Properties:
+
 > .lookup_array
+
 > .lookup_value
+
 > .array [returns array]
+
 > .arrayIndex [returns array]
+
 > .first
+
 > .firstIndex
+
 > .last
+
 > .lastIndex
+
 > .len
 
 ```javascript
