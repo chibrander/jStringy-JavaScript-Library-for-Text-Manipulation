@@ -213,34 +213,79 @@ function bestMatchObject(lookup_value, lookup_array) {
 
 
 
-Number.prototype.formatNumber = function (c, d, t) {
-    var n = this,
-        c = isNaN(c = Math.abs(c)) ? 2 : c,
-        d = d == undefined ? "." : d,
-        t = t == undefined ? "," : t,
-        s = n < 0 ? "-" : "",
-        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
-        j = (j = i.length) > 3 ? j % 3 : 0;
-    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-}
-
+// Prototypes
 
 String.prototype.left = function (numchar) {
-    var c = this.substring(0, numchar);
-    return c;
+    return left(this, numchar);
 }
 
 String.prototype.right = function (numchar) {
     return right(this, numchar);
 }
 
+String.prototype.midd = function (startchar, endchar) {
+    return midd(this, startchar, endchar);
+}
+
+String.prototype.mid = function (startchar, endchar) {
+    return mid(this, startchar, endchar);
+}
+
 String.prototype.reversed = function () {
     return reversed(this);
+}
+
+String.prototype.wordcount = function () {
+    return wordcount(this);
 }
 
 String.prototype.trimed = function () {
     return trimed(this);
 }
+
+String.prototype.getWordByNum = function (word_number) {
+    return getWordByNum(this, word_number);
+}
+
+String.prototype.getLastWordByNum = function (word_number) {
+    return getLastWordByNum(this, word_number);
+}
+
+String.prototype.getWords = function (start_word_number,end_word_number) {
+    return getWords(this, start_word_number,end_word_number);
+}
+
+String.prototype.containsword = function (wordtofind, wheretofind) {
+    return containsword(this, wordtofind, wheretofind);
+}
+
+String.prototype.repeat = function (numtimes) {
+    return repeat(this, numtimes);
+}
+
+
+// formatting prototypes
+Number.prototype.formatCurrency = function (cur, c, d, t) {
+    return formatCurrency(this, cur, c, d, t);
+}
+
+Number.prototype.formatPercent = function (c, d, t) {
+    return formatPercent(this, c, d, t);
+}
+
+Number.prototype.formatNumber = function (c, d, t) {
+    return formatNumber(this, c, d, t);
+}
+
+Number.prototype.formatDollar = function (c, d, t) {
+    return formatDollar(this, c, d, t);
+}
+
+String.prototype.toDouble = function (decimal) {
+    return toDouble(this, decimal);
+}
+// END formatting prototypes
+
 
 String.prototype.levenshteinDistance = function (stringtocompare) {
     return levenshteinDistance(this,stringtocompare);
