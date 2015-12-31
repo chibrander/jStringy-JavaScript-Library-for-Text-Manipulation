@@ -293,7 +293,7 @@ initialtext.bestMatch(myarr);
 
 **bestMatchObject Function Syntax**
 
-Creates an Object taht contains the best match string or index based on Levenshtein Distance.
+Creates an Object that contains the best match string or index based on Levenshtein Distance.
 This function returns an array, due to possibility of having multiple best matches.
 
 >**bestMatchObject([lookup_value], [lookup_array])**
