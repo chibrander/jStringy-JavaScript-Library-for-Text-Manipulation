@@ -61,6 +61,9 @@ Returns specified number of characters from the starting point defined in the mi
 var mytext = "Text that we would like to use, and then more.";
 mid(mytext,6,4);
 // Returns that
+
+// you can also use the following syntax
+mytext.mid(6,4);
 ```
 
 
@@ -76,6 +79,9 @@ Returns characters from the middle of a text string using start and end characte
 var mytext = "Text that we would like to use, and then more.";
 mid(mytext,11,12);
 // Returns we
+
+// you can also use the following syntax
+mytext.midd(11,12);
 ```
 
 
@@ -111,7 +117,7 @@ wordcount(mytext);
 // Returns 10
 
 // you can also use the following syntax
-mytext.reversed();
+mytext.wordcount();
 ```
 
 
@@ -153,6 +159,10 @@ formatDollar(mynumber,0)
 formatDollar(mynumber,2,",",".")
 // Returns $19.654,13
 
+
+// you can also use the following syntax
+mytext.formatDollar();
+mytext.formatDollar(2,",",".");
 ```
 
 
@@ -178,6 +188,10 @@ formatNumber(mynumber,0)
 formatNumber(mynumber,2,",",".")
 // Returns 19.654,13
 
+
+// you can also use the following syntax
+mytext.formatNumber();
+mytext.formatNumber(2,",",".");
 ```
 
 
@@ -204,6 +218,10 @@ formatCurrency(mynumber, "£", 0)
 formatCurrency(mynumber,"£",2,",",".")
 // Returns £19.654,13
 
+
+// you can also use the following syntax
+mytext.formatCurrency("£");
+mytext.formatCurrency("£",2,",",".");
 ```
 
 
