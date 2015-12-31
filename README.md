@@ -16,11 +16,11 @@ str.left(5) //Returns Hello
 
 ##Setup:
 
-Inslude text-me.js file in your project.
+Inslude jstringy.js file in your project.
 Ex.
 
 ```html
-<script src="text-me.js"></script>
+<script src="jstringy.js"></script>
 ```
 ---
 ---
