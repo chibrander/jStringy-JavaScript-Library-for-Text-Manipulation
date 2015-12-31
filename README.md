@@ -123,6 +123,44 @@ mytext.wordcount();
 
 ---
 
+**getWordByNum Function Syntax**
+
+Gets the Nth word by number.
+
+>**getWordByNum([text],[word_number])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+
+getWordByNum(mytext,4)
+// Returns would
+
+// you can also use the following syntax
+mytext.getWordByNum(4)
+```
+
+
+---
+
+**getLastWordByNum Function Syntax**
+
+Gets the Nth word by number.
+
+>**getLastWordByNum([text],[word_number])**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+
+getLastWordByNum(mytext,2)
+// Returns then
+
+// you can also use the following syntax
+mytext.getLastWordByNum(2)
+```
+
+
+---
+
 **trimed Function Syntax**
 
 Removes extra white spaces in the middle, before and after.
