@@ -105,7 +105,7 @@ function formatDollar(num, c, d, t) {
 }
 
 
-function todouble(txt, decimal) {
+function toDouble(txt, decimal) {
     decimal = decimal == undefined ? "." : decimal;
 
     // from accounting.js
