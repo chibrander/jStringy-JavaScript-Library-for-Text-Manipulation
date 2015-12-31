@@ -125,7 +125,7 @@ mytext.wordcount();
 
 **getWordByNum Function Syntax**
 
-Gets the Nth word by number.
+Gets the Nth word from the left by number.
 
 >**getWordByNum([text],[word_number])**
 
@@ -144,7 +144,7 @@ mytext.getWordByNum(4)
 
 **getLastWordByNum Function Syntax**
 
-Gets the Nth word by number.
+Gets the Nth word form the right by number.
 
 >**getLastWordByNum([text],[word_number])**
 
