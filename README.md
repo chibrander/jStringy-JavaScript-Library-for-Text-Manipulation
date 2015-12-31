@@ -161,8 +161,8 @@ formatDollar(mynumber,2,",",".")
 
 
 // you can also use the following syntax
-mytext.formatDollar();
-mytext.formatDollar(2,",",".");
+mynumber.formatDollar();
+mynumber.formatDollar(2,",",".");
 ```
 
 
@@ -190,8 +190,8 @@ formatNumber(mynumber,2,",",".")
 
 
 // you can also use the following syntax
-mytext.formatNumber();
-mytext.formatNumber(2,",",".");
+mynumber.formatNumber();
+mynumber.formatNumber(2,",",".");
 ```
 
 
@@ -220,9 +220,38 @@ formatCurrency(mynumber,"£",2,",",".")
 
 
 // you can also use the following syntax
-mytext.formatCurrency("£");
-mytext.formatCurrency("£",2,",",".");
+mynumber.formatCurrency("£");
+mynumber.formatCurrency("£",2,",",".");
 ```
+
+
+
+---
+
+**formatPercent Function Syntax**
+
+Converts a fraction number to a formatted percentage string.
+
+>**formatPercent([number], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
+
+```javascript
+var mynumber = 0.13214;
+
+formatPercent(mynumber)
+// Returns 13.21%
+
+formatPercent(mynumber,3)
+// Returns 13.214%
+
+formatPercent(mynumber,2,"'",".")
+// Returns 13'21%
+
+
+// you can also use the following syntax
+mynumber.formatPercent();
+mynumber.formatPercent(2,",",".");
+```
+
 
 
 
