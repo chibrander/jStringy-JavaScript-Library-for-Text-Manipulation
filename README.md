@@ -1,6 +1,19 @@
 # jStringy - JavaScript Library for Text Manipulation
 Open-Source JavaScript Library for commonly used text functions.<br /><br />
-Many of the functions are similar to Visual Basic text function syntax, which I often found more intuitive to use than native JavaScript functions.
+Many of the functions are named similar to Visual Basic text function syntax, which I often found more intuitive to use than native JavaScript functions.
+
+Most functions can be used similar to native JavaScript methods.
+Ex.
+'''javascript
+var str = "Hello world!";
+
+// native JavaScript substring
+str.substring(0, 5) //Returns Hello
+
+// jStringy JavaScript left
+str.left(5) //Returns Hello
+
+'''
 
 ##Setup:
 
