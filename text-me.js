@@ -45,6 +45,14 @@ function getLastWordByNum(txt,word_number) {
     return dateArr[dateArr.length-word_number];
 }
 
+function getWords(txt,start_word_number,end_word_number) {
+    var strArray = txt.split(" ");
+    var nArr = [];
+    var n = 0;
+    for(i=start_word_number-1;i<end_word_number;i++){ nArr[n] = strArray[i]; n++;}
+    return nArr.join(" ");
+}
+
 function containsword(wordtofind, wheretofind) {
     var nwheretofind = (" " + wheretofind + " ").toLowerCase();
     var nwordtofind = (" " + wordtofind + " ").toLowerCase();
