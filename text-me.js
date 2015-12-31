@@ -204,8 +204,8 @@ function bestMatchObject(lookup_value, lookup_array) {
     this.first = this.array[0];
     this.firstIndex = this.arrayIndex[0];
     this.len = this.array.length;
-    this.last = this.array[this.len-1];
-    this.lastIndex = this.arrayIndex[this.len-1];    
+    this.last = this.array[this.array.length-1];
+    this.lastIndex = this.arrayIndex[this.array.length-1];    
 
 }
 // END bestMatchObject
