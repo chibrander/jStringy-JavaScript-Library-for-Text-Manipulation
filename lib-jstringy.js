@@ -3,7 +3,7 @@
 
     var jStringy = jStringy || {
         version: "0.1.0",
-        library: "jStringy Library"
+        library: "jStringy - JavaScript Library for Text Manipulation"
     };
 
     jStringy.left = function (text, num_char) {
