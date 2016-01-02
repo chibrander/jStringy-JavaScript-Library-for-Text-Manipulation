@@ -126,6 +126,4 @@
 
     global.jStringy = global.S$ = jStringy;
 
-    global.String.prototype.S$ = jStringy;
-
 }(window));
