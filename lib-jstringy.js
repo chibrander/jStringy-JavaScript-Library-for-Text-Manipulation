@@ -125,20 +125,93 @@
     
     
     jStringy.toDouble = function (txt, decimal) {
-    decimal = decimal == undefined ? "." : decimal;
+        decimal = decimal == undefined ? "." : decimal;
 
-    // from accounting.js
-    // https://raw.githubusercontent.com/openexchangerates/accounting.js/master/accounting.js
+        // from accounting.js
+        // https://raw.githubusercontent.com/openexchangerates/accounting.js/master/accounting.js
 
-    var regex = new RegExp("[^0-9-" + decimal + "]", ["g"]),
+        var regex = new RegExp("[^0-9-" + decimal + "]", ["g"]),
         unformatted = parseFloat(
             ("" + txt)
             .replace(/\((.*)\)/, "-$1") // replace bracketed values with negatives
             .replace(regex, '') // strip out any cruft
             .replace(decimal, '.') // make sure decimal point is standard
         );
-    return unformatted;
-}
+        return unformatted;
+    }
+    
+    
+        /*
+    Levenshtein Distance
+    Based on Andrei Mackenzie's Code
+    */
+    jStringy.levenshteinDistance = function (a, b) {
+        if (a.length == 0) return b.length;
+        if (b.length == 0) return a.length;
+    
+        var matrix = [];
+    
+        // increment along the first column of each row
+        var i;
+        for (i = 0; i <= b.length; i++) {
+            matrix[i] = [i];
+        }
+    
+        // increment each column in the first row
+        var j;
+        for (j = 0; j <= a.length; j++) {
+            matrix[0][j] = j;
+        }
+    
+        // Fill in the rest of the matrix
+        for (i = 1; i <= b.length; i++) {
+            for (j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) == a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, // substitution
+                                            Math.min(matrix[i][j - 1] + 1, // insertion
+                                                     matrix[i - 1][j] + 1)); // deletion
+                }
+            }
+        }
+    
+        return matrix[b.length][a.length];
+    }
+    // END levenshteinDistance
+
+
+
+    /*
+    Gets the best match string or index based on Levenshtein Distance. This function returns an array, due to possibility of having multiple best matches.
+    */
+    jStringy.bestMatch = function (txt, lookup_array, results_type) {
+        var arrmatch = [lookup_array[0]];
+        var arrindex = ["N/A"];
+        var matchnum = jStringy.levenshteinDistance(txt, lookup_array[0]);
+        results_type = results_type == undefined ? 0 : results_type;
+    
+        for (var i = 0; i < lookup_array.length; i++) {
+            if (jStringy.levenshteinDistance(txt, lookup_array[i]) < matchnum) {
+                matchnum = jStringy.levenshteinDistance(txt, lookup_array[i]);
+                arrmatch = [];
+                arrindex = [];
+                arrmatch[0] = lookup_array[i];
+                arrindex[0] = i;
+            } else if (jStringy.levenshteinDistance(txt, lookup_array[i]) == matchnum) {
+                arrmatch[arrmatch.length] = lookup_array[i];
+                arrindex[arrindex.length] = i;
+            }
+        }
+        if (results_type == 0) {
+            return arrmatch;
+        } else {
+            return arrindex;
+        }
+    }
+    // END bestMatch
+
+    
 
 
     global.jStringy = global.S$ = jStringy;
