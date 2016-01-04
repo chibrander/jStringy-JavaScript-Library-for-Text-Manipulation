@@ -5,13 +5,13 @@ Many of the functions are named similar to Visual Basic text function syntax, wh
 Use S$ or jStringy to access the available functions.
 Ex.
 ```javascript
-var str = "Hello world!";
+var mytext = "Text that we would like to use, and then more.";
 
 // native JavaScript substring
-str.substring(0, 5) //Returns Hello
+mytext.substring(0, 3) //Returns Tex
 
 // jStringy left
-S$.left(str,5) //Returns Hello
+S$.left(mytext,3) //Returns Tex
 
 // jStringy getWordByNum
 S$.getWordByNum(mytext,4) // Returns would
