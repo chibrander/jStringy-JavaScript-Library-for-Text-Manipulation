@@ -218,8 +218,8 @@
     
         this.lookup_array = lookup_array;
         this.lookup_value = lookup_value;
-        this.array = jStringy.bestMatch = (this.lookup_value,this.lookup_array);
-        this.arrayIndex = jStringy.bestMatch = (this.lookup_value,this.lookup_array,1);
+        this.array = jStringy.bestMatch(this.lookup_value,this.lookup_array);
+        this.arrayIndex = jStringy.bestMatch(this.lookup_value,this.lookup_array,1);
         this.first = this.array[0];
         this.firstIndex = this.arrayIndex[0];
         this.len = this.array.length;
