@@ -2,7 +2,7 @@
 Open-Source JavaScript Library for commonly used text functions.<br /><br />
 Many of the functions are named similar to Visual Basic text function syntax, which I often found more intuitive to use than native JavaScript functions.
 
-Ue S$ or jStringy to access the available functions.
+Use S$ or jStringy to access the available functions.
 Ex.
 ```javascript
 var str = "Hello world!";
