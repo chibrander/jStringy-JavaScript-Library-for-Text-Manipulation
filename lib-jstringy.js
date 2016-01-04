@@ -122,6 +122,23 @@
     jStringy.formatDollar = function (num, c, d, t) {
         return jStringy.formatMain(num, "$", c, d, t, "");
     }
+    
+    
+    jStringy.toDouble = function (txt, decimal) {
+    decimal = decimal == undefined ? "." : decimal;
+
+    // from accounting.js
+    // https://raw.githubusercontent.com/openexchangerates/accounting.js/master/accounting.js
+
+    var regex = new RegExp("[^0-9-" + decimal + "]", ["g"]),
+        unformatted = parseFloat(
+            ("" + txt)
+            .replace(/\((.*)\)/, "-$1") // replace bracketed values with negatives
+            .replace(regex, '') // strip out any cruft
+            .replace(decimal, '.') // make sure decimal point is standard
+        );
+    return unformatted;
+}
 
 
     global.jStringy = global.S$ = jStringy;
