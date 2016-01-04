@@ -10,8 +10,14 @@ var str = "Hello world!";
 // native JavaScript substring
 str.substring(0, 5) //Returns Hello
 
-// jStringy JavaScript left
+// jStringy left
 S$.left(str,5) //Returns Hello
+
+// jStringy getWordByNum
+S$.getWordByNum(mytext,4) // Returns would
+
+// jStringy getWords
+S$.getWords(mytext,2,5) // Returns that we would like
 ```
 
 
