@@ -2,7 +2,7 @@
 Open-Source JavaScript Library for commonly used text functions.<br /><br />
 Many of the functions are named similar to Visual Basic text function syntax, which I often found more intuitive to use than native JavaScript functions.
 
-Most functions can be used similar to native JavaScript methods.
+Ue S$ or jStringy to access the available functions.
 Ex.
 ```javascript
 var str = "Hello world!";
@@ -11,18 +11,8 @@ var str = "Hello world!";
 str.substring(0, 5) //Returns Hello
 
 // jStringy JavaScript left
-str.left(5) //Returns Hello
+S$.left(str,5) //Returns Hello
 ```
-
-You can slo use them as regular functions.
-Ex.
-```javascript
-var str = "Hello world!";
-
-// jStringy left function
-left(str,5) //Returns Hello
-```
-
 
 
 ##Setup:
@@ -47,11 +37,9 @@ Returns specified number of characters from the left of a text string.
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
-left(mytext,3);
-// Returns Tex
 
-// you can also use the following syntax
-mytext.left(3);
+S$.left(mytext,3)
+// Returns Tex
 ```
 
 ---
@@ -64,11 +52,9 @@ Returns specified number of characters from the right of a text string.
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
-right(mytext,4);
-// Returns ore.
 
-// you can also use the following syntax
-mytext.right(4);
+S$.right(mytext,4)
+// Returns ore.
 ```
 
 
@@ -82,11 +68,9 @@ Returns specified number of characters from the starting point defined in the mi
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
-mid(mytext,6,4);
-// Returns that
 
-// you can also use the following syntax
-mytext.mid(6,4);
+S$.mid(mytext,6,4)
+// Returns that
 ```
 
 
@@ -100,11 +84,9 @@ Returns characters from the middle of a text string using start and end characte
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
-mid(mytext,11,12);
-// Returns we
 
-// you can also use the following syntax
-mytext.midd(11,12);
+S$.mid(mytext,11,12)
+// Returns we
 ```
 
 
@@ -118,11 +100,9 @@ Flips (reverses) the text string.
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
-reversed(mytext);
-// Returns .erom neht dna ,esu ot ekil dluow ew taht txeT
 
-// you can also use the following syntax
-mytext.reversed();
+S$.reversed(mytext)
+// Returns .erom neht dna ,esu ot ekil dluow ew taht txeT
 ```
 
 
@@ -136,11 +116,9 @@ Gets the wordcount from a string.
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
-wordcount(mytext);
-// Returns 10
 
-// you can also use the following syntax
-mytext.wordcount();
+S$.wordcount(mytext)
+// Returns 10
 ```
 
 
@@ -155,11 +133,8 @@ Gets the Nth word from the left by number.
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-getWordByNum(mytext,4)
+S$.getWordByNum(mytext,4)
 // Returns would
-
-// you can also use the following syntax
-mytext.getWordByNum(4)
 ```
 
 
@@ -174,11 +149,8 @@ Gets the Nth word form the right by number.
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-getLastWordByNum(mytext,2)
+S$.getLastWordByNum(mytext,2)
 // Returns then
-
-// you can also use the following syntax
-mytext.getLastWordByNum(2)
 ```
 
 
@@ -193,11 +165,8 @@ Gets a part of initial string by first and last word position.
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-getWords(mytext,2,5)
+S$.getWords(mytext,2,5)
 // Returns that we would like
-
-// you can also use the following syntax
-mytext.getWords(2,5)
 ```
 
 
@@ -212,11 +181,9 @@ Removes extra white spaces in the middle, before and after.
 
 ```javascript
 var mytext = " Text that we,  would like to  use, and   then  more.   ";
-trimed(mytext);
-// Returns Text that we, would like to use, and then more.
 
-// you can also use the following syntax
-mytext.trimed();
+S$.trimed(mytext);
+// Returns Text that we, would like to use, and then more.
 ```
 
 
@@ -231,19 +198,14 @@ Converts a number to Dollar currency formatted string.
 ```javascript
 var mynumber = 19654.13;
 
-formatDollar(mynumber)
+S$.formatDollar(mynumber)
 // Returns $19,654.13
 
-formatDollar(mynumber,0)
+S$.formatDollar(mynumber,0)
 // Returns $19,654
 
-formatDollar(mynumber,2,",",".")
+S$.formatDollar(mynumber,2,",",".")
 // Returns $19.654,13
-
-
-// you can also use the following syntax
-mynumber.formatDollar();
-mynumber.formatDollar(2,",",".");
 ```
 
 
@@ -260,19 +222,14 @@ Converts a number to a formatted string with thousand separator.
 ```javascript
 var mynumber = 19654.13;
 
-formatNumber(mynumber)
+S$.formatNumber(mynumber)
 // Returns 19,654.13
 
-formatNumber(mynumber,0)
+S$.formatNumber(mynumber,0)
 // Returns 19,654
 
-formatNumber(mynumber,2,",",".")
+S$.formatNumber(mynumber,2,",",".")
 // Returns 19.654,13
-
-
-// you can also use the following syntax
-mynumber.formatNumber();
-mynumber.formatNumber(2,",",".");
 ```
 
 
@@ -287,22 +244,17 @@ Converts a number to a currency string.
 ```javascript
 var mynumber = 19654.13;
 
-formatCurrency(mynumber,"£")
+S$.formatCurrency(mynumber,"£")
 // Returns £19,654.13
 
-formatCurrency(mynumber,"USD ")
+S$.formatCurrency(mynumber,"USD ")
 // Returns USD 19,654.13
 
-formatCurrency(mynumber, "£", 0)
+S$.formatCurrency(mynumber, "£", 0)
 // Returns £19,654
 
-formatCurrency(mynumber,"£",2,",",".")
+S$.formatCurrency(mynumber,"£",2,",",".")
 // Returns £19.654,13
-
-
-// you can also use the following syntax
-mynumber.formatCurrency("£");
-mynumber.formatCurrency("£",2,",",".");
 ```
 
 
@@ -318,19 +270,14 @@ Converts a fraction number to a formatted percentage string.
 ```javascript
 var mynumber = 0.13214;
 
-formatPercent(mynumber)
+S$.formatPercent(mynumber)
 // Returns 13.21%
 
-formatPercent(mynumber,3)
+S$.formatPercent(mynumber,3)
 // Returns 13.214%
 
-formatPercent(mynumber,2,"'",".")
+S$.formatPercent(mynumber,2,"'",".")
 // Returns 13'21%
-
-
-// you can also use the following syntax
-mynumber.formatPercent();
-mynumber.formatPercent(2,",",".");
 ```
 
 
@@ -346,16 +293,11 @@ Converts a currency string or other number formatted string to double.
 ```javascript
 var mytext = "$15,159.79 USD";
 
-toDouble(mytext)
+S$.toDouble(mytext)
 // Returns 15159.79
 
-toDouble(mytext,",")
+S$.toDouble(mytext,",")
 // Returns 15.15979
-
-
-// you can also use the following syntax
-mytext.toDouble();
-mytext.toDouble(",");
 ```
 
 
@@ -373,26 +315,23 @@ Caculates Levenshtein Distance between 2 strings.
 ```javascript
 var initialtext = "My New Car";
 
-levenshteinDistance(initialtext, "My car new");
+S$.levenshteinDistance(initialtext, "My car new");
 // Returns 6
 
-levenshteinDistance(initialtext, "My Toyota car");
+S$.levenshteinDistance(initialtext, "My Toyota car");
 // Returns 7
 
-levenshteinDistance(initialtext, "My New Car");
+S$.levenshteinDistance(initialtext, "My New Car");
 // Returns 0
 
-levenshteinDistance(initialtext, "My Nw Car");
+S$.levenshteinDistance(initialtext, "My Nw Car");
 // Returns 1
 
-levenshteinDistance(initialtext, "Bar Car");
+S$.levenshteinDistance(initialtext, "Bar Car");
 // Returns 6
 
-levenshteinDistance(initialtext, "your Nw car");
+S$.levenshteinDistance(initialtext, "your Nw car");
 // Returns 6
-
-// you can also use the following syntax
-initialtext.levenshteinDistance("My car new");
 ```
 
 
@@ -411,15 +350,15 @@ This function returns an array, due to possibility of having multiple best match
 var initialtext = "My New Car";
 var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
 
-bestMatch(initialtext, myarr)
+S$.bestMatch(initialtext, myarr)
 // Returns ["My Nw Car", "My Ne Car"]
 
 // get the first best match
-bestMatch(initialtext, myarr)[0]
+S$.bestMatch(initialtext, myarr)[0]
 // Returns My Nw Car
 
 // get the index of matches, instead of values.
-bestMatch(initialtext, myarr,1)
+S$.bestMatch(initialtext, myarr,1)
 // Returns [2, 5]
 
 ////////////////////////////////////////////////
@@ -429,16 +368,13 @@ bestMatch(initialtext, myarr,1)
 var mymatchArray = bestMatch(initialtext, myarr);
 
 // get the first best match
-mymatchArray[0]; // Returns My Nw Car
+S$.mymatchArray[0]; // Returns My Nw Car
 
 // get the next best match
-mymatchArray[1]; // Returns My Ne Car
+S$.mymatchArray[1]; // Returns My Ne Car
 
 // you can find out how many best matches are available
-mymatchArray.length //Returns 2
-
-// you can also use the following syntax
-initialtext.bestMatch(myarr);
+S$.mymatchArray.length //Returns 2
 ```
 
 
@@ -476,7 +412,7 @@ This function returns an array, due to possibility of having multiple best match
 var initialtext = "My New Car";
 var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
 
-var b = new bestMatchObject(initialtext,myarr);
+var b = new S$.bestMatchObject(initialtext,myarr);
 // Creates an Object and stores in variable b
 
 //get an array of best matches
