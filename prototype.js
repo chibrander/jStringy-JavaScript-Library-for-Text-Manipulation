@@ -16,6 +16,10 @@
     jInit.prototype.toString = function() { return this.val; }
 
 
+    jInit.prototype.value = function () {
+        return this.val;
+    }
+    
     jInit.prototype.left = function (num_char) {
         if (num_char == undefined) {
             throw "Number of characters is required!";
