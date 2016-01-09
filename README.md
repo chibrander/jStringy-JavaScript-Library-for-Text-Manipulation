@@ -75,12 +75,12 @@ S$(mytext).right(4).value()
 
 Returns specified number of characters from the starting point defined in the middle of a text string.
 
->**mid([Text as String],[Starting Character],[Number of Characters])**
+>**mid([Starting Character],[Number of Characters])**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.mid(mytext,6,4)
+S$(mytext).mid(6,4).value()
 // Returns that
 ```
 
@@ -91,12 +91,12 @@ S$.mid(mytext,6,4)
 
 Returns characters from the middle of a text string using start and end character number.
 
->**midd([Text as String],[Start Character],[End Character])**
+>**midd([Start Character],[End Character])**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.mid(mytext,11,12)
+S$(mytext).mid(11,12).value()
 // Returns we
 ```
 
@@ -107,12 +107,12 @@ S$.mid(mytext,11,12)
 
 Flips (reverses) the text string.
 
->**reversed([Text as String])**
+>**reversed()**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.reversed(mytext)
+S$(mytext).reversed().value()
 // Returns .erom neht dna ,esu ot ekil dluow ew taht txeT
 ```
 
@@ -123,12 +123,12 @@ S$.reversed(mytext)
 
 Gets the wordcount from a string.
 
->**wordcount([Text as String])**
+>**wordcount()**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.wordcount(mytext)
+S$(mytext).wordcount().value()
 // Returns 10
 ```
 
@@ -139,28 +139,15 @@ S$.wordcount(mytext)
 
 Gets the Nth word from the left by number.
 
->**getWordByNum([text],[word_number])**
+>**getWordByNum([word_number])**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.getWordByNum(mytext,4)
+S$(mytext).getWordByNum(4).value()
 // Returns would
-```
 
-
----
-
-**getLastWordByNum Function Syntax**
-
-Gets the Nth word form the right by number.
-
->**getLastWordByNum([text],[word_number])**
-
-```javascript
-var mytext = "Text that we would like to use, and then more.";
-
-S$.getLastWordByNum(mytext,2)
+S$(mytext).getWordByNum(2,0).value()
 // Returns then
 ```
 
