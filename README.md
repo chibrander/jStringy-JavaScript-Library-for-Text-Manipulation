@@ -119,16 +119,16 @@ S$(mytext).reversed().value()
 
 ---
 
-**wordcount Function Syntax**
+**wordCount Function Syntax**
 
 Gets the wordcount from a string.
 
->**wordcount()**
+>**wordCount()**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$(mytext).wordcount().value()
+S$(mytext).wordCount().value()
 // Returns 10
 ```
 
@@ -150,6 +150,10 @@ S$(mytext).getWordByNum(4).value()
 // use 0 for type to flip the count from the right side of the string.
 S$(mytext).getWordByNum(2,0).value()
 // Returns then
+
+// get the first character of last word
+S$(mytext).getWordByNum(1,0).left(1).value()
+// Returns then
 ```
 
 
@@ -159,12 +163,12 @@ S$(mytext).getWordByNum(2,0).value()
 
 Gets a part of initial string by first and last word position.
 
->**getWords([text],[start_word_number],[end_word_number])**
+>**getWords([start_word_number],[end_word_number])**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.getWords(mytext,2,5)
+S$(mytext).getWords(2,5).value()
 // Returns that we would like
 ```
 
@@ -176,12 +180,12 @@ S$.getWords(mytext,2,5)
 
 Removes extra white spaces in the middle, before and after.
 
->**trimed([Text as String])**
+>**trimed()**
 
 ```javascript
 var mytext = " Text that we,  would like to  use, and   then  more.   ";
 
-S$.trimed(mytext);
+S$(mytext).trimed().value()
 // Returns Text that we, would like to use, and then more.
 ```
 
@@ -192,18 +196,18 @@ S$.trimed(mytext);
 
 Converts a number to Dollar currency formatted string.
 
->**formatDollar([number], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
+>**formatDollar([number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
 
 ```javascript
 var mynumber = 19654.13;
 
-S$.formatDollar(mynumber)
+S$(mynumber).formatDollar().value()
 // Returns $19,654.13
 
-S$.formatDollar(mynumber,0)
+S$(mynumber).formatDollar(0).value()
 // Returns $19,654
 
-S$.formatDollar(mynumber,2,",",".")
+S$(mynumber).formatDollar(2,",",".").value()
 // Returns $19.654,13
 ```
 
@@ -216,18 +220,18 @@ S$.formatDollar(mynumber,2,",",".")
 
 Converts a number to a formatted string with thousand separator.
 
->**formatNumber([number], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
+>**formatNumber([number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
 
 ```javascript
 var mynumber = 19654.13;
 
-S$.formatNumber(mynumber)
+S$(mynumber).formatNumber().value()
 // Returns 19,654.13
 
-S$.formatNumber(mynumber,0)
+S$(mynumber).formatNumber(0).value()
 // Returns 19,654
 
-S$.formatNumber(mynumber,2,",",".")
+S$(mynumber).formatNumber(2,",",".").value()
 // Returns 19.654,13
 ```
 
@@ -238,21 +242,21 @@ S$.formatNumber(mynumber,2,",",".")
 
 Converts a number to a currency string.
 
->**formatCurrency([number], [currency_string], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
+>**formatCurrency([currency_string], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
 
 ```javascript
 var mynumber = 19654.13;
 
-S$.formatCurrency(mynumber,"£")
+S$(mynumber).formatCurrency("£").value()
 // Returns £19,654.13
 
-S$.formatCurrency(mynumber,"USD ")
+S$(mynumber).formatCurrency("USD ").value()
 // Returns USD 19,654.13
 
-S$.formatCurrency(mynumber, "£", 0)
+S$(mynumber).formatCurrency("£", 0).value()
 // Returns £19,654
 
-S$.formatCurrency(mynumber,"£",2,",",".")
+S$(mynumber).formatCurrency("£",2,",",".").value()
 // Returns £19.654,13
 ```
 
@@ -264,18 +268,18 @@ S$.formatCurrency(mynumber,"£",2,",",".")
 
 Converts a fraction number to a formatted percentage string.
 
->**formatPercent([number], [number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
+>**formatPercent([number_of_digits_after_delimiter] optional, [delimiter_string] optional, [thousand_separator_string] optional)**
 
 ```javascript
 var mynumber = 0.13214;
 
-S$.formatPercent(mynumber)
+S$(mynumber).formatPercent().value()
 // Returns 13.21%
 
-S$.formatPercent(mynumber,3)
+S$(mynumber).formatPercent(3).value()
 // Returns 13.214%
 
-S$.formatPercent(mynumber,2,"'",".")
+S$(mynumber).formatPercent(2,"'",".").value()
 // Returns 13'21%
 ```
 
@@ -287,15 +291,15 @@ S$.formatPercent(mynumber,2,"'",".")
 
 Converts a currency string or other number formatted string to double.
 
->**toDouble([text_number, [decimal_separator] optional)**
+>**toDouble([decimal_separator] optional)**
 
 ```javascript
 var mytext = "$15,159.79 USD";
 
-S$.toDouble(mytext)
+S$(mytext).toDouble().value()
 // Returns 15159.79
 
-S$.toDouble(mytext,",")
+S$(mytext).toDouble(",").value()
 // Returns 15.15979
 ```
 
