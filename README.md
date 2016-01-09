@@ -313,27 +313,27 @@ S$(mytext).toDouble(",").value()
 
 Caculates Levenshtein Distance between 2 strings.
 
->**levenshteinDistance([Text as String],[Text_to_Compare as String])**
+>**levenshteinDistance([Text_to_Compare as String])**
 
 ```javascript
 var initialtext = "My New Car";
 
-S$.levenshteinDistance(initialtext, "My car new");
+S$(initialtext).levenshteinDistance("My car new").value()
 // Returns 6
 
-S$.levenshteinDistance(initialtext, "My Toyota car");
+S$(initialtext).levenshteinDistance("My Toyota car").value()
 // Returns 7
 
-S$.levenshteinDistance(initialtext, "My New Car");
+S$(initialtext).levenshteinDistance("My New Car").value()
 // Returns 0
 
-S$.levenshteinDistance(initialtext, "My Nw Car");
+S$(initialtext).levenshteinDistance("My Nw Car").value()
 // Returns 1
 
-S$.levenshteinDistance(initialtext, "Bar Car");
+S$(initialtext).levenshteinDistance("Bar Car").value()
 // Returns 6
 
-S$.levenshteinDistance(initialtext, "your Nw car");
+S$(initialtext).levenshteinDistance("your Nw car").value()
 // Returns 6
 ```
 
@@ -347,37 +347,37 @@ S$.levenshteinDistance(initialtext, "your Nw car");
 Gets the best match string or index based on Levenshtein Distance.
 This function returns an array, due to possibility of having multiple best matches.
 
->**bestMatch([Text as String],[Array_of_Strings_to_Check],[results_type] optional)**
+>**bestMatch([Array_of_Strings_to_Check],[results_type] optional)**
 
 ```javascript
 var initialtext = "My New Car";
 var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
 
-S$.bestMatch(initialtext, myarr)
+S$(initialtext).bestMatch(myarr).value()
 // Returns ["My Nw Car", "My Ne Car"]
 
 // get the first best match
-S$.bestMatch(initialtext, myarr)[0]
+S$(initialtext).bestMatch(myarr).value()[0]
 // Returns My Nw Car
 
 // get the index of matches, instead of values.
-S$.bestMatch(initialtext, myarr,1)
+S$(initialtext).bestMatch(myarr,1).value()
 // Returns [2, 5]
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
-var mymatchArray = bestMatch(initialtext, myarr);
+var mymatchArray = S$(initialtext).bestMatch(myarr).value();
 
 // get the first best match
-S$.mymatchArray[0]; // Returns My Nw Car
+mymatchArray[0] // Returns My Nw Car
 
 // get the next best match
-S$.mymatchArray[1]; // Returns My Ne Car
+mymatchArray[1] // Returns My Ne Car
 
 // you can find out how many best matches are available
-S$.mymatchArray.length //Returns 2
+mymatchArray.length //Returns 2
 ```
 
 
