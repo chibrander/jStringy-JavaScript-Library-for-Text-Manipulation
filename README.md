@@ -458,4 +458,13 @@ b.len
 b.lookup_array
 //Returns ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"]
 
+
+// iterate through all match types
+for(var i = 0; i < b.len; i++) {
+  console.log(b.array[i]);
+}
+// Returns
+//    My Nw Car
+//    Returns My Ne Car
+
 ```
