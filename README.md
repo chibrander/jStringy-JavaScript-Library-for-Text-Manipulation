@@ -1,8 +1,10 @@
 # jStringy - JavaScript Library for Text Manipulation
-Open-Source JavaScript Library for commonly used text functions.<br /><br />
-Many of the functions are named similar to Visual Basic text function syntax, which I often found more intuitive to use than native JavaScript functions.
+Free Open-Source JavaScript Library for commonly used text functions.<br /><br />
+Most functions are chainable.
 
-Use S$ or jStringy to access the available functions.
+Use S$ or jStringy to access the available functions. Selectors work similar to jQuuery syntax. Keep in mind that this a sring manipulation library, so we select a string or number variable, NOT a DOM element.<br /><br />
+S$("My Text Goes Here") or S$(my_var_that_holds_the_value)
+
 Ex.
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
@@ -11,13 +13,16 @@ var mytext = "Text that we would like to use, and then more.";
 mytext.substring(0, 3) //Returns Tex
 
 // jStringy left
-S$.left(mytext,3) //Returns Tex
+S$(mytext).left(3).value() //Returns Tex
 
 // jStringy getWordByNum
-S$.getWordByNum(mytext,4) // Returns would
+S$(mytext).getWordByNum(4).value() // Returns would
 
 // jStringy getWords
-S$.getWords(mytext,2,5) // Returns that we would like
+S$(mytext).getWords(2,5).value() // Returns that we would like
+
+// jStringy Chained Example
+S$(mytext).getWordByNum(4).left(3).right(2).value() // Returns ou
 ```
 
 
@@ -39,12 +44,12 @@ Ex.
 
 Returns specified number of characters from the left of a text string.
 
->left([Text as String],[Number of Characters])
+>left([Number of Characters])
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.left(mytext,3)
+S$(mytext).left(3).value()
 // Returns Tex
 ```
 
@@ -54,12 +59,12 @@ S$.left(mytext,3)
 
 Returns specified number of characters from the right of a text string.
 
->**right([Text as String],[Number of Characters])**
+>**right([Number of Characters])**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-S$.right(mytext,4)
+S$(mytext).right(4).value()
 // Returns ore.
 ```
 
