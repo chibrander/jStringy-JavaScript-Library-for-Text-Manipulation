@@ -398,7 +398,7 @@ for(var i = 0; i < mymatchArray.length; i++) {
 Creates an Object that contains the best match string or index based on Levenshtein Distance.
 This function returns an array, due to possibility of having multiple best matches.
 
->**bestMatchObject([lookup_value], [lookup_array])**
+>**bestMatchObject([lookup_array])**
 
 >***Properties:***
 
@@ -424,7 +424,7 @@ This function returns an array, due to possibility of having multiple best match
 var initialtext = "My New Car";
 var myarr = ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"];
 
-var b = new S$.bestMatchObject(initialtext,myarr);
+var b = S$(initialtext).bestMatchObject(myarr);
 // Creates an Object and stores in variable b
 
 //get an array of best matches
