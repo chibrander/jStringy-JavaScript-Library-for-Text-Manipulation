@@ -50,6 +50,22 @@
         return this;
     }
 
+    jInit.prototype.BeforeAfter = function (character, return_type, adjust) {
+        adjust = adjust == undefined ? 0 : adjust;
+        return_type = return_type == undefined ? 0 : return_type;
+        var pos = this.val.indexOf(character) + 2 + adjust;
+
+        // 0 for Before
+        if (return_type == 0) {
+            this.val = jStringy(this.val).midd(1, pos - 2).val;
+        } else {
+            var len = this.val.length;
+            this.val = jStringy(this.val).midd(pos, len).val;
+        }
+        return this;
+    }
+
+
     jInit.prototype.reversed = function () {
         var s = this.val;
         for (var i = s.length - 1, o = ''; i >= 0; o += s[i--]) {}
@@ -73,7 +89,7 @@
     jInit.prototype.getWordByNum = function (word_number, type) {
         var text = jStringy(this.val).trimed().val;
         var dateArr = text.split(" ");
-
+        // 0 to count from the right end
         if (type == 0) {
             this.val = dateArr[dateArr.length - word_number];
         } else {
