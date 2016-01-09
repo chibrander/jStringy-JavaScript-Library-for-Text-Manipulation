@@ -139,7 +139,7 @@ S$(mytext).wordcount().value()
 
 Gets the Nth word from the left by number.
 
->**getWordByNum([word_number])**
+>**getWordByNum([word_number],[type] optional)**
 
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
@@ -147,6 +147,7 @@ var mytext = "Text that we would like to use, and then more.";
 S$(mytext).getWordByNum(4).value()
 // Returns would
 
+// use 0 for type to flip the count from the right side of the string.
 S$(mytext).getWordByNum(2,0).value()
 // Returns then
 ```
