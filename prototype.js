@@ -2,6 +2,9 @@
 (function (global) {
 
     var jInit = function (text) {
+        if (text == undefined) {
+            throw "Please include a valid parameter inside parenthesis.";
+        }
         this.text = text;
         this.val = text;
     }
@@ -85,6 +88,28 @@
         this.val = this.val.replace(/ +/g, " ").trim();
         return this;
     }
+
+
+    jInit.prototype.proper = function (type) {
+        // based on David Gouch's code
+        var txt = this.val;
+        var web = /[A-Z]|\../;
+        if (type == 1) {
+            var t = /^(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|vs?\.?|via)$/i;
+        } else if (type == 2) {
+            var t = /^(a|an|the|to|for|on|of|in)$/i;
+        } else if (type == 3) {
+            var t = /^(a|an|the)$/i;
+        } else {
+            var t = /^()$/i;
+            web = "Abs&&$$olper&&*%jhghjfddsg45654737egffdgd@hgfh";
+        }
+        this.val = txt.replace(/([^\W_]+[^\s-]*) */g, function (txt, n, r, i) {
+            return r > 0 && r + n.length !== i.length && n.search(t) > -1 && i.charAt(r - 2) !== ":" && i.charAt(r - 1).search(/[^\s-]/) < 0 ? txt.toLowerCase() : n.substr(1).search(web) > -1 ? txt : txt.charAt(0).toUpperCase() + txt.substr(1)
+        })
+        return this;
+    };
+
 
     jInit.prototype.getWordByNum = function (word_number, type) {
         var text = jStringy(this.val).trimed().val;
