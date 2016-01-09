@@ -378,6 +378,15 @@ mymatchArray[1] // Returns My Ne Car
 
 // you can find out how many best matches are available
 mymatchArray.length //Returns 2
+
+
+// iterate through all match types
+for(var i = 0; i < mymatchArray.length; i++) {
+  console.log(mymatchArray[i]);
+}
+// Returns
+//    My Nw Car
+//    Returns My Ne Car
 ```
 
 
