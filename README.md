@@ -380,7 +380,7 @@ mymatchArray[1] // Returns My Ne Car
 mymatchArray.length //Returns 2
 
 
-// iterate through all match types
+// iterate through all matches
 for(var i = 0; i < mymatchArray.length; i++) {
   console.log(mymatchArray[i]);
 }
@@ -459,7 +459,7 @@ b.lookup_array
 //Returns ["My car new", "My Toyota car", "My Nw Car", "Bar Car", "your Nw car", "My Ne Car", "yet one other thing"]
 
 
-// iterate through all match types
+// iterate through all matches
 for(var i = 0; i < b.len; i++) {
   console.log(b.array[i]);
 }
