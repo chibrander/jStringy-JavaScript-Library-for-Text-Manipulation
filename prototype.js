@@ -149,6 +149,123 @@
         return this;
     }
 
+    jInit.prototype.toDouble = function (decimal) {
+        decimal = decimal == undefined ? "." : decimal;
+
+        // from accounting.js
+        // https://raw.githubusercontent.com/openexchangerates/accounting.js/master/accounting.js
+
+        var regex = new RegExp("[^0-9-" + decimal + "]", ["g"]),
+            unformatted = parseFloat(
+                ("" + this.val)
+                .replace(/\((.*)\)/, "-$1") // replace bracketed values with negatives
+                .replace(regex, '') // strip out any cruft
+                .replace(decimal, '.') // make sure decimal point is standard
+            );
+        this.val = unformatted;
+        return this;
+    }
+
+
+
+
+
+    /*
+    Levenshtein Distance
+    Based on Andrei Mackenzie's Code
+    */
+    jInit.prototype.levenshteinDistance = function (b) {
+            var a = this.val;
+            if (a.length == 0) return b.length;
+            if (b.length == 0) return a.length;
+
+            var matrix = [];
+
+            // increment along the first column of each row
+            var i;
+            for (i = 0; i <= b.length; i++) {
+                matrix[i] = [i];
+            }
+
+            // increment each column in the first row
+            var j;
+            for (j = 0; j <= a.length; j++) {
+                matrix[0][j] = j;
+            }
+
+            // Fill in the rest of the matrix
+            for (i = 1; i <= b.length; i++) {
+                for (j = 1; j <= a.length; j++) {
+                    if (b.charAt(i - 1) == a.charAt(j - 1)) {
+                        matrix[i][j] = matrix[i - 1][j - 1];
+                    } else {
+                        matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, // substitution
+                            Math.min(matrix[i][j - 1] + 1, // insertion
+                                matrix[i - 1][j] + 1)); // deletion
+                    }
+                }
+            }
+
+            this.val = matrix[b.length][a.length];
+            return this;
+        }
+        // END levenshteinDistance
+
+
+
+
+
+    /*
+    Gets the best match string or index based on Levenshtein Distance. This function returns an array, due to possibility of having multiple best matches.
+    */
+    jInit.prototype.bestMatch = function (lookup_array, results_type) {
+            var txt = this.val;
+            var arrmatch = [lookup_array[0]];
+            var arrindex = ["N/A"];
+            var matchnum = jStringy(txt).levenshteinDistance(lookup_array[0]).val;
+            results_type = results_type == undefined ? 0 : results_type;
+
+            for (var i = 0; i < lookup_array.length; i++) {
+                if (jStringy(txt).levenshteinDistance(lookup_array[i]).val < matchnum) {
+                    matchnum = jStringy(txt).levenshteinDistance(lookup_array[i]).val;
+                    arrmatch = [];
+                    arrindex = [];
+                    arrmatch[0] = lookup_array[i];
+                    arrindex[0] = i;
+                } else if (jStringy(txt).levenshteinDistance(lookup_array[i]).val == matchnum) {
+                    arrmatch[arrmatch.length] = lookup_array[i];
+                    arrindex[arrindex.length] = i;
+                }
+            }
+            if (results_type == 0) {
+                this.val = arrmatch;
+            } else {
+                this.val = arrindex;
+            }
+            return this;
+        }
+        // END bestMatch
+
+
+
+    // convert to Object
+
+    jInit.prototype.bestMatchObject = function (lookup_array) {
+
+            this.lookup_array = lookup_array;
+            this.lookup_value = this.val;
+            this.array = jStringy(this.lookup_value).bestMatch(this.lookup_array).val;
+            this.arrayIndex = jStringy(this.lookup_value).bestMatch(this.lookup_array, 1).val;
+            this.first = this.array[0];
+            this.firstIndex = this.arrayIndex[0];
+            this.len = this.array.length;
+            this.last = this.array[this.array.length - 1];
+            this.lastIndex = this.arrayIndex[this.array.length - 1];
+            return this;
+
+        }
+        // END bestMatchObject
+
 
 
 
