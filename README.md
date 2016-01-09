@@ -9,9 +9,6 @@ Ex.
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
-// native JavaScript substring
-mytext.substring(0, 3) //Returns Tex
-
 // jStringy left
 S$(mytext).left(3).value() //Returns Tex
 
