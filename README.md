@@ -2,7 +2,7 @@
 Free Open-Source JavaScript Library for commonly used text functions.<br /><br />
 Most functions are chainable.
 
-Use S$ or jStringy to access the available functions. Selectors work similar to jQuuery syntax. Keep in mind that this a sring manipulation library, so we select a string or number variable, NOT a DOM element.<br /><br />
+Use S$ or jStringy to access the available functions. Selectors work similar to jQuuery syntax. Keep in mind that this is a string manipulation library, so we select a string or number variable, NOT a DOM element.<br /><br />
 S$("My Text Goes Here") or S$(my_var_that_holds_the_value)
 
 Ex.
