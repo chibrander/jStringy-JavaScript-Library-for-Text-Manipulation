@@ -386,7 +386,7 @@ for(var i = 0; i < mymatchArray.length; i++) {
 }
 // Returns
 //    My Nw Car
-//    Returns My Ne Car
+//    My Ne Car
 ```
 
 
@@ -465,6 +465,6 @@ for(var i = 0; i < b.len; i++) {
 }
 // Returns
 //    My Nw Car
-//    Returns My Ne Car
+//    My Ne Car
 
 ```
