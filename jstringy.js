@@ -56,11 +56,12 @@
     jInit.prototype.BeforeAfter = function (character, return_type, adjust) {
         adjust = adjust == undefined ? 0 : adjust;
         return_type = return_type == undefined ? 0 : return_type;
-        var pos = this.val.indexOf(character) + 2 + adjust;
+        var len = character.length;
+        var pos = this.val.indexOf(character) + len + 1 + adjust;
 
         // 0 for Before
         if (return_type == 0) {
-            this.val = jStringy(this.val).midd(1, pos - 2).val;
+            this.val = jStringy(this.val).midd(1, pos - len - 1).val;
         } else {
             var len = this.val.length;
             this.val = jStringy(this.val).midd(pos, len).val;
