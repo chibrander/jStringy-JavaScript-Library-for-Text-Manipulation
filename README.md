@@ -170,6 +170,24 @@ S$(mytext).getWords(2,5).value()
 ```
 
 
+---
+
+**BeforeAfter Function Syntax**
+
+Gets a part of initial string before or after a given character.
+
+>**BeforeAfter([character], [return_type] optional, [adjust] optional)**
+
+```javascript
+var mytext = "Text that we would like to use, and then more.";
+
+S$(mytext).BeforeAfter(",").value()
+// Returns  and then more.
+```
+
+
+
+
 
 ---
 
