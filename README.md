@@ -174,7 +174,7 @@ S$(mytext).getWords(2,5).value()
 
 **BeforeAfter Function Syntax**
 
-Gets a part of initial string before or after a given character.
+Gets a part of initial string before or after the first occurance of a given string.
 
 >**BeforeAfter([character], [return_type] optional, [adjust] optional)**
 
@@ -190,6 +190,9 @@ S$(mytext).BeforeAfter(",",0).value()
 
 S$(mytext).BeforeAfter(",",1).value()
 // Returns " and then more."
+
+S$(mytext).BeforeAfter(", ",1).value()
+// Returns "and then more."
 
 S$(mytext).BeforeAfter(",",0,-2).value()
 // Returns "Text that we would like to u"
