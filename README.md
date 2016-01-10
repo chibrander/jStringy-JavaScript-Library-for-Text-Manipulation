@@ -181,8 +181,22 @@ Gets a part of initial string before or after a given character.
 ```javascript
 var mytext = "Text that we would like to use, and then more.";
 
+
 S$(mytext).BeforeAfter(",").value()
-// Returns  and then more.
+// Returns "Text that we would like to use"
+
+S$(mytext).BeforeAfter(",",0).value()
+// Returns "Text that we would like to use"
+
+S$(mytext).BeforeAfter(",",1).value()
+// Returns " and then more."
+
+S$(mytext).BeforeAfter(",",0,-2).value()
+// Returns "Text that we would like to u"
+
+S$(mytext).BeforeAfter(",",1,-1).value()
+// Returns ", and then more."
+
 ```
 
 
