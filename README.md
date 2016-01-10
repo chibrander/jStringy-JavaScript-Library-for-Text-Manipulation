@@ -20,6 +20,12 @@ S$(mytext).getWords(2,5).value() // Returns that we would like
 
 // jStringy Chained Example
 S$(mytext).getWordByNum(4).left(3).right(2).value() // Returns ou
+
+S$(mytext).proper().value()
+// Returns "Text That We Would Like To Use, And Then More."
+
+S$(mytext).proper(1).value()
+// Returns "Text That We Would Like to Use, and Then More."
 ```
 
 
