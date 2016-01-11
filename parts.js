@@ -12,3 +12,13 @@ var upper = new RegExp(/--RegexCode--/);
 "sampleString".replace(/--whatever it should do--/);
 
 var finalRe = new RegExp(lower.source + "|" + upper.source);
+
+
+
+var a = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\.\/:;<=>?@\[\]^_`{|}~]/g;
+var b = /(-\s)|(\s-)/g;
+var g = /(-[^a-zA-Z\d].)|([^a-zA-Z\d].-)/g;
+
+var finalRe = new RegExp(a.source + "|" + g.source,"g");
+var str = "This - is- #! an $ % ^ & * -example ;: {} of a = -_ string- with `~)() -ddd punctu-ation re-enter";
+str.replace(finalRe, ' ');
