@@ -316,7 +316,6 @@
         // END bestMatch
 
 
-
     // convert to Object
 
     jInit.prototype.bestMatchObject = function (lookup_array) {
