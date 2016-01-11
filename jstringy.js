@@ -339,7 +339,8 @@
     var popula = function (texto, ind, filter_array, override, type) {
         type = type == undefined ? 0 : type;
         override = override == undefined ? 0 : override;
-        var str = texto.toLowerCase();
+        var str = texto.replace(/,|\.|\:|\;|\?|\!|\(|\)/g, " ");
+        str = str.toLowerCase();
         var cominwords = ['of', 'the', 'in', 'on', 'at', 'to', 'a', 'is', 'an', 'for', 'and', 'or', 'as', 'are', 'am'];
         var comwords = [];
 
