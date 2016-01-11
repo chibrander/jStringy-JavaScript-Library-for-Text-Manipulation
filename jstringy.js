@@ -336,10 +336,11 @@
         // END bestMatchObject
 
 
-    jInit.prototype.popular = function (ind, filter_array, override, type) {
+
+    var popula = function (texto, ind, filter_array, override, type) {
         type = type == undefined ? 0 : type;
         override = override == undefined ? 0 : override;
-        var str = this.val.toLowerCase();
+        var str = texto.toLowerCase();
         var cominwords = ['of', 'the', 'in', 'on', 'at', 'to', 'a', 'is', 'an', 'for', 'and', 'or', 'as', 'are', 'am'];
         var comwords = [];
 
@@ -421,13 +422,24 @@
         methodarr.sort();
 
         if (type == 0) {
-            this.val = methodarr;
+            return methodarr;
         } else {
-            this.val = newarr[ind - 1];
+            return newarr[ind - 1];
         }
-        return this;
 
     }
+
+    // convert popular to Object
+
+    jInit.prototype.popular = function (ind, filter_array, override) {
+            this.array = popula(this.val, ind, filter_array, override, 0);
+            this.count = popula(this.val, ind, filter_array, override, 1);
+            this.first = this.array[0];
+            this.len = this.array.length;
+            this.last = this.array[this.array.length - 1];
+            return this;
+        }
+        // END popular Object
 
 
     global.jStringy = global.S$ = jStringy;
