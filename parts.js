@@ -3,3 +3,12 @@ var spaceRE = /\s+/g;
 var str = "This - is- #! an $ % ^ & * -example ;: {} of a = -_ string- with `~)() -ddd punctu-ation re-enter";
 str.replace(punctRE, ' ').replace(spaceRE, ' ');
 "This is an example of a string with ddd punctu-ation re-enter"
+
+
+var lower = new RegExp(/--RegexCode--/);
+var upper = new RegExp(/--RegexCode--/);
+
+\\hence, regex can be dynamically created. After creation:
+"sampleString".replace(/--whatever it should do--/);
+
+var finalRe = new RegExp(lower.source + "|" + upper.source);
