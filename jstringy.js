@@ -336,6 +336,98 @@
         // END bestMatchObject
 
 
+    jInit.prototype.popular = function (ind, filter_array, override, type) {
+        type = type == undefined ? 0 : type;
+        override = override == undefined ? 0 : override;
+        var str = this.val.toLowerCase();
+        var cominwords = ['of', 'the', 'in', 'on', 'at', 'to', 'a', 'is', 'an', 'for', 'and', 'or', 'as', 'are', 'am'];
+        var comwords = [];
+
+        if (filter_array != undefined && override == 0) {
+            comwords = cominwords.concat(filter_array);
+        } else if (filter_array != undefined) {
+            comwords = filter_array;
+        } else if (override == 0) {
+            comwords = cominwords;
+        }
+
+        var re = new RegExp('\\b(' + comwords.join('|') + ')\\b', 'g');
+        str = (str || '').replace(re, '').replace(/[ ]{2,}/, ' ');
+        str = jStringy(str).trimed().val;
+
+        var arr = str.split(" ").sort();
+        var resarr = [[1, arr[0]]];
+        var n = 0;
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i] == resarr[n][1]) {
+                resarr[n][0]++;
+            } else {
+                var nxt = arr[i];
+                resarr.push([1, nxt]);
+                n++;
+            }
+        }
+        // sort decending by column 2. Switch 1 and -1 for asc.
+
+        function dsd(a, b) {
+            if (a[1] === b[1]) {
+                return 0;
+            } else {
+                return (a[1] < b[1]) ? 1 : -1;
+            }
+        }
+
+        function dsdF(a, b) {
+            if (a[0] === b[0]) {
+                return 0;
+            } else {
+                return (a[0] < b[0]) ? 1 : -1;
+            }
+        }
+
+        // resarr is now an array with all words with their counts.
+        // resarr[0][0] holds the count, resarr[0][1] holds the word.
+        resarr.sort(dsdF);
+
+        //remove text column from the array and assign to a new variable
+        var uresarr = resarr.map(function (val) {
+            return val.slice(0, -1);
+        });
+
+        uresarr.sort();
+
+        var newarr = [uresarr[0][0]];
+
+        for (var i = 1; i < uresarr.length; i++) {
+
+            if (uresarr[i][0] !== uresarr[i - 1][0]) {
+                newarr.push(uresarr[i][0]);
+            }
+
+        }
+
+        // newarr is now a list of counts in descending order.
+        newarr.sort(function (a, b) {
+            return b - a
+        });
+
+        var methodarr = [];
+
+        for (var i = 0; i < resarr.length; i++) {
+            if (resarr[i][0] == newarr[ind - 1]) {
+                methodarr.push(resarr[i][1]);
+            }
+        }
+        methodarr.sort();
+
+        if (type == 0) {
+            this.val = methodarr;
+        } else {
+            this.val = newarr[ind - 1];
+        }
+        return this;
+
+    }
 
 
     global.jStringy = global.S$ = jStringy;
